@@ -1,0 +1,27 @@
+{% extends "layaouts/base.html" %}
+
+
+{% block 'title' %} PRODUCTOS {% endblock %}
+
+
+{% block 'content' %}
+<h1>PRODUCTOS</h1>
+
+<span class = 'btn'><a href="{% url 'productos'%}">Ver todos</a><a href="{% url 'productos_crear' %}">Añadir</a></span>
+<ul class = "list">
+    
+    {% for productos in productos %}
+    <li>{{productos.nombre}}
+        <span>
+            <a href="{% url 'productos_ver' id=productos.id %}" class = 'btn_ver'>Ver</a>
+            <a href="{% url 'productos_editar' id=productos.id %}" class = 'btn_editar'>Editar</a>
+            <a href="{% url 'productos_borrar' id=productos.id %}" class = 'btn_borrar'>Borrar</a>
+        </span>
+    </li>        
+    {% endfor %}        
+</ul>
+
+    
+{% endblock %}
+    
+    

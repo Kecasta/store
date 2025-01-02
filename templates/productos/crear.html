@@ -1,0 +1,25 @@
+{% extends "layaouts/base.html" %}
+
+
+{% block 'title' %}Crear Productos {% endblock %}
+
+{% block 'styles' %}
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'css/forms.css' %}">
+{% endblock %}
+
+
+{% block 'content' %}
+<span class ='btn'><a href="{%url 'productos' %}">Volverl atras</a></span>
+<form action="{% url 'productos_crear' %}" method= "POST">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <div class = 'btn_enviar'>
+        <input type="Submit" value="enviar" class = 'btn_send'>
+    </div>
+</form>
+    
+{% endblock  %}
+    

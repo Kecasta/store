@@ -1,0 +1,43 @@
+{% extends "layaouts/base.html" %}
+
+
+{% block 'title' %} Editar Producto {% endblock %}
+
+
+{% block 'styles' %}
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'css/forms.css' %}">
+{% endblock %}
+
+
+{% block 'content' %}
+
+    {% if messages %}
+    <ul class="messages">
+        
+        {% for message in messages %}
+        <li{%if message.tags %} class = 'alert-success'{% endif%}>{{message}}</li>            
+        {% endfor %}
+            
+    </ul>
+    {% endif %}
+
+    <span class ='btn_form'><a href="{%url 'productos'%}">Volver atras</a></span>
+    <form action="{% url 'productos_editar' id=id%}" method= "POST"> 
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+            <div class = 'btn_enviar'>
+                <input type="submit" value = "enviar" class = 'btn_send'>
+            </div>
+        </table>
+
+    </form>
+    
+{% endblock  %}
+
+    
+    
+    
+
+

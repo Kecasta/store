@@ -1,0 +1,15 @@
+{% extends "layaouts/base.html" %}
+
+
+{% block 'title' %} Inicio {% endblock  %}
+
+
+{% block 'content' %}
+<h1>Bienvenido al gestor de Productos y Clientes</h1>
+<div class= 'cards'>
+    <a href="{% url 'productos' %}" class = 'card'>Productos</a>
+    <a href="{% url 'clientes' %}" class = 'card'>Clientes</a>
+</div>
+{% endblock %}
+    
+    

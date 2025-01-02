@@ -1,0 +1,16 @@
+{% extends "layaouts/base.html" %}
+
+{% block 'title' %} Clientes {% endblock %}
+
+
+{% block 'content' %}
+<span class ='btn'><a href="{%url 'clientes'%}">Volver atras</a></span>
+<ul class = 'list'>
+    <li><b>Nombre</b>{{clientes.nombre}}</li>
+    <li><b>Apellido</b>{{clientes.apellido}}</li>
+    <li><b>Contacto</b>{{cliente.contacto}}</li>
+    <li><b>email</b>{{clientes.email}}</li>
+    <li><b>empresa</b>{{clientes.empresa}}</li>
+</ul>
+{% endblock %}
+    

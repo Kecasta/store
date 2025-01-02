@@ -1,0 +1,16 @@
+{% extends "layaouts/base.html" %}
+
+{% block 'title' %} Productos {% endblock %}
+
+
+{% block 'content' %}
+<span class ='btn'><a href="{%url 'productos'%}">Volver a tras</a></span>
+<ul class = 'list'>
+    <li><b>Codigo</b>{{productos.codigo}}</li>
+    <li><b>Nombre</b>{{productos.nombre}}</li>
+    <li><b>Costo</b>{{productos.precio_costo}}</li>
+    <li><b>Venta</b>{{productos.precio_venta}}</li>
+    <li><b>stock_inicial</b>{{productos.stock_inicial}}</li>
+</ul>
+{% endblock %}
+    
